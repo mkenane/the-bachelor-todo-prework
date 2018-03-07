@@ -30,7 +30,16 @@ proflady
 end
 
 def count_contestants_by_hometown(data, hometown)
-  # code here
+ counter = 0 
+  data.collect do |seasons, info|
+    info.collect do |contestants|
+      if contestants["hometown"] == hometown
+        counter += 1 
+      end 
+    end
+  end 
+
+counter
 end
 
 def get_occupation(data, hometown)
