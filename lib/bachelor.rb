@@ -60,7 +60,7 @@ def get_average_age_for_season(data, season)
   data.each do |seasons, info|
     if season.to_sym == seasons
       info.each do |contestant|
-         ages_added += contestant["age"].to_i
+         ages_added += contestant[:age].to_i
          average_age = ages_added/info.length
        end 
      end 
