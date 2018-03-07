@@ -45,7 +45,7 @@ def get_occupation(data, hometown)
   occupation = nil 
   data.collect do |seasons, info|
     cont = info.find do |contestant| 
-      contestant[:hometown] == hometown
+      contestant[":hometown"] == hometown
       end 
     if !cont 
     else occupation = cont[:occupation]
