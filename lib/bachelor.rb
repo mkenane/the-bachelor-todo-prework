@@ -43,7 +43,16 @@ counter
 end
 
 def get_occupation(data, hometown)
-  # code here
+  occupation = nil 
+  data.collect do |seasons, info|
+    cont = info.find do |contestant| 
+      contestant[:hometown] == hometown
+      end 
+    if !cont 
+    else occupation = cont[:occupation]
+    end 
+  end 
+occupation
 end
 
 def get_average_age_for_season(data, season)
