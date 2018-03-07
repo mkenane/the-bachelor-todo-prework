@@ -55,5 +55,15 @@ occupation
 end
 
 def get_average_age_for_season(data, season)
-  # code here
+ ages_added = 0 
+  average_age = nil 
+  data.each do |seasons, info|
+    if season.to_sym == seasons
+      info.each do |contestant|
+         ages_added += contestant[:age].to_i
+         average_age = ages_added/info.length
+       end 
+     end 
+   end 
+   average_age
 end
