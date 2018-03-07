@@ -1,9 +1,32 @@
+
+
+
 def get_first_name_of_season_winner(data, season)
-  # code here
+winner = nil 
+  data.collect do |seasons, info|
+    if seasons == season
+      info.collect do |contestant|
+        if contestant["status"] == "Winner"
+          winner = contestant["name"].split[0]
+        end 
+      end 
+    end 
+  end 
+winner 
 end
 
+
+
 def get_contestant_name(data, occupation)
-  # code here
+proflady = nil 
+data.collect do |seasons, info|
+  info.collect do |contestant|
+    if contestant["occupation"] == occupation
+      proflady = contestant["name"]
+    end 
+  end
+end 
+proflady
 end
 
 def count_contestants_by_hometown(data, hometown)
